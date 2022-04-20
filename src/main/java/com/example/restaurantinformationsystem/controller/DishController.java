@@ -1,17 +1,26 @@
 package com.example.restaurantinformationsystem.controller;
 
+import com.example.restaurantinformationsystem.dto.DishDto;
 import com.example.restaurantinformationsystem.dto.DishExtendedDto;
 import com.example.restaurantinformationsystem.service.DishService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Set;
 
 
 @RestController
 @RequiredArgsConstructor
 public class DishController {
     private final DishService dishService;
+
+    @GetMapping("/dish")
+    public Set<DishDto> getAllDishes(@RequestParam String category){
+        return dishService.getAllDishes(category);
+    }
 
     @GetMapping("/dish/{id}")
     public DishExtendedDto getDishById(@PathVariable long id) {
