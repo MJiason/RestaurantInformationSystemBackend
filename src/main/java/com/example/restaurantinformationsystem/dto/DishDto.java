@@ -16,6 +16,7 @@ public class DishDto implements Serializable {
     private String category;
     private int weight;
     private int price;
+    private int calories;
     @Max(100)
     @PositiveOrZero(message = "Discount must be positive")
     private int discount;
