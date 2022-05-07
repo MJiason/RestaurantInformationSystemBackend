@@ -25,4 +25,22 @@ public class DishController {
     public DishExtendedDto getDishById(@PathVariable long id) {
         return dishService.detDishById(id);
     }
+
+    @CrossOrigin(origins = "http://localhost:4200")
+    @PutMapping("/dish")
+    public void createDish(@RequestBody DishExtendedDto dishDto) {
+        dishService.createDish(dishDto);
+    }
+
+    @CrossOrigin(origins = "http://localhost:4200")
+    @PostMapping("/dish")
+    public void updateDish(@RequestBody DishExtendedDto dishDto) {
+        dishService.updateDish(dishDto);
+    }
+
+    @CrossOrigin(origins = "http://localhost:4200")
+    @DeleteMapping("/dish/{id}")
+    public void deleteDish(@PathVariable long id) {
+        dishService.deleteDish(id);
+    }
 }

@@ -41,4 +41,25 @@ public class DishService {
 
         return dishMapper.mapToDishExtendedDto(dishRepository.getById(id));
     }
+
+    public void createDish(DishExtendedDto dishDto) {
+        if (dishDto == null) {
+            throw new  IllegalArgumentException("dish not present");
+        }
+        dishRepository.save(dishMapper.mapToDishEntity(dishDto));
+    }
+
+    public void updateDish(DishExtendedDto dishDto) {
+        if (dishDto == null) {
+            throw new  IllegalArgumentException("dish not present");
+        }
+        dishRepository.save(dishMapper.mapToDishEntity(dishDto));
+    }
+
+    public void deleteDish(long dishId) {
+        if (!dishRepository.existsById(dishId)) {
+            throw new IllegalArgumentException("dish not exist");
+        }
+        dishRepository.deleteById(dishId);
+    }
 }

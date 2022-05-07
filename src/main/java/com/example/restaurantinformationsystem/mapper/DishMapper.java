@@ -26,12 +26,22 @@ public class DishMapper {
 
     public DishExtendedDto mapToDishExtendedDto(DishEntity dish) {
         DishExtendedDto dishExtendedDto = modelMapper.map(dish, DishExtendedDto.class);
-        dishExtendedDto.setCategory(dish.getCategory().getName());
+         //dishExtendedDto.setCategory(dish.getCategory().getName());
         Set<IngredientDto> ingredientDtoSet = new HashSet<>();
         for (IngredientEntity ingredient : dish.getIngredients()) {
             ingredientDtoSet.add(modelMapper.map(ingredient, IngredientDto.class));
         }
         dishExtendedDto.setIngredients(ingredientDtoSet);
         return dishExtendedDto;
+    }
+
+    public DishEntity mapToDishEntity(DishExtendedDto dish) {
+        DishEntity dishEntity = modelMapper.map(dish, DishEntity.class);
+        Set<IngredientEntity> ingredientEntitySet = new HashSet<>();
+        for (IngredientDto ingredient : dish.getIngredients()) {
+            ingredientEntitySet.add(modelMapper.map(ingredient, IngredientEntity.class));
+        }
+        dishEntity.setIngredients(ingredientEntitySet);
+        return dishEntity;
     }
 }

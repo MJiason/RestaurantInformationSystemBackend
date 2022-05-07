@@ -1,6 +1,7 @@
 package com.example.restaurantinformationsystem.dto;
 
 import lombok.Data;
+import org.springframework.lang.NonNull;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.PositiveOrZero;
@@ -11,7 +12,7 @@ import java.util.Set;
 public class DishExtendedDto implements Serializable {
     private long id;
     private String name;
-    private String category;
+    private CategoryDto category;
     private int weight;
     private int calories;
     private int price;
@@ -23,9 +24,5 @@ public class DishExtendedDto implements Serializable {
 
     public void setIngredients(Set<IngredientDto> ingredients) {
         this.ingredients = ingredients;
-    }
-
-    public void setCategory(String categoryName) {
-        this.category = categoryName;
     }
 }
