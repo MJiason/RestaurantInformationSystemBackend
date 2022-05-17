@@ -1,6 +1,7 @@
 package com.example.restaurantinformationsystem.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -31,6 +32,7 @@ public class DishEntity implements Serializable {
     private int discount;
     @Column(nullable = false)
     private int calories;
+    @Column(name = "photo", updatable = false)
     private String photo;
     @ManyToMany()
     private Set<IngredientEntity> ingredients;

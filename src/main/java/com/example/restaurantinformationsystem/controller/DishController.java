@@ -2,6 +2,7 @@ package com.example.restaurantinformationsystem.controller;
 
 import com.example.restaurantinformationsystem.dto.DishDto;
 import com.example.restaurantinformationsystem.dto.DishExtendedDto;
+import com.example.restaurantinformationsystem.dto.SavePhotoDto;
 import com.example.restaurantinformationsystem.service.DishService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
