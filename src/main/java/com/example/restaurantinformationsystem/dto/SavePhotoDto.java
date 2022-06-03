@@ -1,10 +1,7 @@
 package com.example.restaurantinformationsystem.dto;
 
-import com.example.restaurantinformationsystem.entity.EntityType;
+import com.example.restaurantinformationsystem.entity.Enums.EntityType;
 import lombok.Data;
-
-
-import java.io.Serializable;
 
 @Data
 public class SavePhotoDto {
