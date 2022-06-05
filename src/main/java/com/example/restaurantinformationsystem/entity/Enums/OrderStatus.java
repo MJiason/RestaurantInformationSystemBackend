@@ -4,9 +4,10 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 
 public enum OrderStatus {
     NEW(0),
-    ENTERING(0),
-    READY(0),
-    FINISHED(0);
+    ENTERING(1),
+    READY(2),
+    DELIVERED(3),
+    FINISHED(4);
 
     public int getNum() {
         return num;
